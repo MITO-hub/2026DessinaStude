@@ -1,7 +1,9 @@
+using UnityEngine;
+
 public class PlayerMovement : MonoBehaviour
 {
 
-public float moveSpeed = 5f;
+    public float moveSpeed = 5f;
 
     public float minX = -14f;
     public float maxX = 14f;
@@ -14,7 +16,7 @@ public float moveSpeed = 5f;
         float x = Input.GetAxisRaw("Horizontal");
         float z = Input.GetAxisRaw("Vertical");
 
-        Vector3 moveDir = new Vector3(x, of ,z).normalized;
+        Vector3 moveDir = new Vector3(x, 0f, z).normalized;
 
         Vector3 nextPosition = transform.position + moveDir * moveSpeed * Time.deltaTime;
 
@@ -27,4 +29,5 @@ public float moveSpeed = 5f;
         {
             transform.forward = moveDir;
         }
+    }
 }
